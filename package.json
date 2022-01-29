@@ -1,0 +1,45 @@
+{
+	"name": "paws",
+	"version": "1.0.0",
+	"description": "Lightweight and simple static site template for researchers in the Digital Humanities",
+	"homepage": "https://github.com/codexfelis/paws-template",
+	"license": "MIT",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"preview": "svelte-kit preview",
+		"check": "svelte-check --jsconfig ./jsconfig.json",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+		"format": "prettier --write --plugin-search-dir=. .",
+		"prepare": "husky install",
+		"postbuild": "node scripts/sitemap.js"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.17",
+		"@sveltejs/kit": "next",
+		"@typescript-eslint/eslint-plugin": "^4.29.3",
+		"autoprefixer": "^10.2.5",
+		"canvas": "^2.8.0",
+		"cssnano": "^5.0.1",
+		"eslint": "^7.22.0",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-plugin-svelte3": "^3.2.0",
+		"husky": "^6.0.0",
+		"mdsvex": "^0.9.0",
+		"postcss": "^8.2.10",
+		"postcss-load-config": "^3.0.1",
+		"prettier": "~2.2.1",
+		"prettier-plugin-svelte": "^2.2.0",
+		"rehype-external-links": "^1.0.0",
+		"rehype-slug": "^4.0.1",
+		"remark-reading-time": "^1.0.1",
+		"svelte": "^3.34.0",
+		"svelte-check": "^2.0.0",
+		"svelte-preprocess": "^4.7.1",
+		"xmlbuilder2": "^3.0.2"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=14.13"
+	}
+}

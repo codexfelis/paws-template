@@ -1,0 +1,6 @@
+node_modules
+.svelte-kit
+build
+# Local Netlify folder
+.netlify
+.vscode/settings.json

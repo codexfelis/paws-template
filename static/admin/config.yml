@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+  
+publish_mode: editorial_workflow
+media_folder: static/images
+public_folder: /images
+site_url: https://www.example.com/
+display_url: https://www.example.com
+logo_url: https://www.example.com/CMSLogo.png # Logo must be 300x125px
+search: false
+
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/routes/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{fields.slug}}" # Filename template, e.g., title.md
+    preview_path: "blog/{{slug}}" # the path where content in this collection can be found on the live site
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: []}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Publish Date", name: "publishDate", widget: "date"}
+      - {label: "Last Updated Date", name: "lastUpdated", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}
+

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Lato:400,700|Lora|Playfair+Display:700i,900&display=swap');
+
+:root {
+	/* Change this value ↓ 0-360 */
+	--colour-main-hue: 208;
+	--colour-main-saturation: 35%;
+	--colour-main-lightness: 27%;
+	--colour-main: hsl(
+		var(--colour-main-hue),
+		var(--colour-main-saturation),
+		var(--colour-main-lightness)
+	);
+
+	/* You might want to check this looks ok and tweak - highlight some text to see it */
+	--colour-accent: hsla(calc(var(--colour-main-hue) + 240), 90%, var(--colour-main-lightness), 0.5);
+
+	--colour-bg: hsl(var(--colour-main-hue), 100%, 96%);
+	--colour-fg: hsl(var(--colour-main-hue), var(--colour-main-saturation), 12%);
+	--colour-main-dim: hsl(
+		var(--colour-main-hue),
+		calc(var(--colour-main-saturation) / 2),
+		calc(var(--colour-main-lightness) * 1.5)
+	);
+
+	--space-wide: 0.8em;
+	--space-narrow: 0.4em;
+	--font-fancy: 'Playfair Display', serif;
+	--font-body: 'Lora', serif;
+	--font-header: 'Lato', sans-serif;
+	--font-mono: 'Fira Code', monospace;
+	--border-radius: 4px;
+}
+
+html {
+	margin: 0;
+	width: 100%;
+	align-items: center;
+	scroll-behavior: smooth;
+}
+
+body {
+	max-width: 800px;
+	margin: auto;
+	color: var(--colour-fg);
+	background-color: var(--colour-bg);
+}
+
+@media screen and (min-width: 768px) {
+	html {
+		font-size: 105%;
+	}
+	:root {
+		--space-wide: 2em;
+		--space-narrow: 1em;
+	}
+}
+
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 var(--space-wide);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+}
+
+h1,
+h2,
+p,
+i,
+a {
+	text-rendering: optimizeLegibility;
+}
+
+h1,
+h1 > a {
+	text-decoration: none;
+	font-family: var(--font-fancy);
+	font-size: 2.85rem;
+	text-align: left;
+	margin-bottom: 8px;
+	color: var(--colour-main);
+}
+
+h2,
+h2 > a {
+	text-decoration: none;
+	font-family: var(--font-header);
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding: 0;
+	margin: 2.5rem 0 -0.5rem 0;
+	text-align: left;
+	line-height: 2rem;
+	letter-spacing: -0.45px;
+}
+
+h3,
+h3 > a {
+	text-decoration: none;
+	font-family: var(--font-header);
+	font-size: 1.3rem;
+	font-weight: 700;
+	font-style: italic;
+	padding: 0;
+	margin: 2rem 0 -0.5rem 0;
+	text-align: left;
+	letter-spacing: -0.45px;
+}
+
+p,
+i,
+a,
+li {
+	color: var(--colour-fg);
+	margin-top: 1.2rem;
+	font-family: var(--font-body);
+	font-size: 1.2rem;
+	letter-spacing: -0.03px;
+	line-height: 1.58;
+}
+
+a {
+	text-decoration: underline;
+	color: var(--colour-main);
+}
+
+blockquote,
+.emph {
+	font-family: var(--font-fancy);
+	font-size: 1.8rem;
+	font-style: italic;
+	letter-spacing: -0.36px;
+	line-height: 2.8rem;
+	overflow-wrap: break-word;
+	margin: 55px 0 33px 0;
+	color: var(--colour-main);
+	padding: 0 0 0 50px;
+}
+
+code {
+	font-size: 1rem;
+	font-family: var(--font-mono);
+	background-color: rgba(46, 52, 64, 0.1);
+	border-radius: 2px;
+}
+
+:not(pre) > code {
+	/* Don't indent the first line of a code block */
+	padding: 0.1em 0.5em;
+}
+
+pre {
+	max-width: 85vw;
+	overflow-x: scroll;
+}
+
+mark,
+.highlighted {
+	background: var(--colour-accent);
+}
+
+::selection {
+	background-color: var(--colour-accent);
+}
+
+img {
+	max-width: 100%;
+}
+
+.dim {
+	font-size: smaller;
+	color: var(--colour-main-dim);
+}
